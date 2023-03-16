@@ -34,6 +34,9 @@ def employeeForm(request, id=0):
             form.save()
         return redirect(employeeList)
 
-def employeeDelete(request):
+def employeeDelete(request, id):
     # This function deals with the deletion of an employee record 
-    return
+   
+    employee = Employee.objects.get(pk=id)
+    employee.delete()
+    return render(request, 'employeeList.html')
