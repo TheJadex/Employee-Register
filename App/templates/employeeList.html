@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title%}Employee List {% endblock %}
+
+{% block body %}
+<p>We'll show list of employees from the table </p>
+
+<table class="table table-borderless">
+    <thead class="border-bottom font weight-bold">
+        <tr>
+            <td>Full Name</td>
+            <td>Phone Number</td>
+            <td>Postion</td>
+            <td>
+                {% comment %} For Adding a new Operation {% endcomment %}
+                <a href="{% url 'employeeForm' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i>New
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in employeelist %}
+            <tr>
+                <td>{{ employee.fullName }}</td>
+                <td>{{ employee.mobileNum }}</td>
+                <td>{{ employee.position }}</td>
+                <td>
+                    {% comment %} For Update Operation {% endcomment %}
+                    <a href="{% url 'employeeUpdate' employee.id %}" class="btn text-secondary px-0">
+                        <i class="fa fa-edit fa-lg"></i>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

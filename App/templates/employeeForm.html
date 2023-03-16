@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% load crispy_forms_tags %}
+
+{% block title%}Employee Form {% endblock %}
+
+{% block body %}
+
+    <form action ="" method ="post" autocomplete ="off">
+        {% csrf_token %}
+        {% comment %} {{ form|crispy }} {% endcomment %}
+        {{ form.fullName|as_crispy_field }}
+        {{ form.mobileNum|as_crispy_field }}
+        
+        <div class="row">
+            <div class="col-md-4">
+                {{ form.emp_code|as_crispy_field }}
+            </div>
+            <div class="col-md-8">
+                {{ form.position|as_crispy_field }}
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success"><li class="fas fa-database"></li> Submit</button>
+    </form>
+
+{% endblock %}
