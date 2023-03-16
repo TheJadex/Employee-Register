@@ -16,13 +16,28 @@
                 <h1 class="display-4">Employee Register</h1>
                 <p class="lead italics">Python Django project for implementing CRUD operations</p>
                                 {% comment %} For Easy Links because I can't remember some {% endcomment %}
-                                <a href="{% url 'defaultView' %}">HomePage</a>&nbsp
+                                {% comment %} <a href="{% url 'defaultView' %}">HomePage</a>&nbsp
                                 <a href="{% url 'employeeList' %}">EmployeeList</a>&nbsp
-                                <a href="{% url 'employeeForm' %}">EmployeeForm</a>
+                                <a href="{% url 'employeeForm' %}">EmployeeForm</a> {% endcomment %}
                 <hr class="my-4">
                 
+
                 
                 {% block body %}
+                    {% comment %} Link to List or Form {% endcomment %}
+                    <div class="row">
+                        <div class="col-md-5">
+                            <a href="{% url 'employeeList' %}" class="btn btn-secondary btn-block btn-lg">
+                                <i class="fas fa-stream"></i> List
+                            </a>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="{% url 'employeeForm' %}" class="btn btn-success btn-block btn-lg">
+                                <i class="fas fa-plus"></i> New
+                            </a>
+                        </div>
+                    </div>
                 {% endblock %}
                 
                 <div>

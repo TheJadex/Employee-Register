@@ -20,7 +20,21 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-success"><li class="fas fa-database"></li> Submit</button>
+        
+        <div class="row">
+            <div class="col-md-8">
+                <button type="submit" class="btn btn-success btn-block btn-lg">
+                    <li class="fas fa-database"></li> Submit
+                </button>
+            </div>
+            
+            <div class="col-md-4">
+                <a href="{% url 'employeeList' %}" class="btn btn-secondary btn-block btn-lg">
+                    <i class="fas fa-stream"></i> List
+                </a>
+            </div>
+        </div>
+        
     </form>
 
 {% endblock %}
