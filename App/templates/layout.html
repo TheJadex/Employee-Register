@@ -12,13 +12,17 @@
     
     <div class="container">
         <div class="col-md-10 offset-md-1 mt-5">
+            <div class="float-right">
+                <a href="{% url 'defaultView' %}" class="btn btn-light">
+                    <i class="fa-solid fa-house"></i> Homepage
+                </a>
+            </div>
             <div class="jumbotron">
                 <h1 class="display-4">Employee Register</h1>
                 <p class="lead italics">Python Django project for implementing CRUD operations</p>
                                 {% comment %} For Easy Links because I can't remember some {% endcomment %}
-                                {% comment %} <a href="{% url 'defaultView' %}">HomePage</a>&nbsp
-                                <a href="{% url 'employeeList' %}">EmployeeList</a>&nbsp
-                                <a href="{% url 'employeeForm' %}">EmployeeForm</a> {% endcomment %}
+                                {% comment %} <a href="{% url 'employeeList' %}">EmployeeList</a>&nbsp
+                                <a href="{% url 'employeeForm' %}">EmployeeForm</a>  {% endcomment %}
                 <hr class="my-4">
                 
 
